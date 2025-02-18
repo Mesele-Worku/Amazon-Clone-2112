@@ -2,13 +2,14 @@ import React from "react";
 import CarouselEffect from "../../Components/Carousel/CarouselEffect";
 import Category from "../../Components/Category/Category";
 import Product from "../../Components/Product/Product";
+import LayOut from "../../Components/LayOut/LayOut";
 function Landing() {
   return (
-    <Layout>
+    <LayOut>
       <CarouselEffect />
       <Category />
       <Product />
-    </Layout>
+    </LayOut>
   );
 }
 

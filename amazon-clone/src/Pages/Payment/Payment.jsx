@@ -1,7 +1,12 @@
 import React from "react";
 import styles from "./Payment.module.css";
+import LayOut from "../../Components/LayOut/LayOut";
 function Payment() {
-  return <div>Payments</div>;
+  return (
+    <LayOut>
+      <div>Payment</div>
+    </LayOut>
+  );
 }
-import styles from "./Payment.module.css";
+
 export default Payment;

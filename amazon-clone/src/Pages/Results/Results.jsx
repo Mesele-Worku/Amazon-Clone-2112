@@ -1,7 +1,11 @@
 import React from "react";
 import styles from "./Results.module.css";
+import LayOut from "../../Components/LayOut/LayOut";
 function Results() {
-  return <div>Results</div>;
+  return (
+    <LayOut>
+      <div>Results</div>
+    </LayOut>
+  );
 }
-import styles from "./Results.module.css";
 export default Results;

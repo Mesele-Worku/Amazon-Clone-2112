@@ -1,7 +1,11 @@
 import React from "react";
 import styles from "./ProductDetail.module.css";
+import LayOut from "../../Components/LayOut/LayOut";
 function ProductDetail() {
-  return <div>Product Details</div>;
+ return (
+   <LayOut>
+     <div>Product Details</div>
+   </LayOut>
+ );
 }
-import styles from "./ProductDetail.module.css";
 export default ProductDetail;

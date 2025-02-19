@@ -5,7 +5,7 @@ import LayOut from "../../Components/LayOut/LayOut";
 import ProductCard from "../../Components/Product/ProductCard";
 import { productUrl } from "../../API/Endpoints";
 import Loader from "../../Components/Loader/Loader";
-
+import styles from "./ProductDetail.module.css"
 function ProductDetail() {
   const { productId } = useParams();
   console.log("Product ID from URL:", productId);
@@ -32,7 +32,13 @@ function ProductDetail() {
 
   return (
     <LayOut>
-      {isLoading ? <Loader /> : <ProductCard product={product} />}
+      <section className={styles.product_detail}>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <ProductCard product={product} flex={true} renderDesc={true} />
+        )}
+      </section>
     </LayOut>
   );
 }

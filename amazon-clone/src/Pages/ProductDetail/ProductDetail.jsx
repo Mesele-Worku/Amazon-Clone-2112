@@ -5,7 +5,7 @@ import LayOut from "../../Components/LayOut/LayOut";
 import ProductCard from "../../Components/Product/ProductCard";
 import { productUrl } from "../../API/Endpoints";
 import Loader from "../../Components/Loader/Loader";
-import styles from "./ProductDetail.module.css"
+import styles from "./ProductDetail.module.css";
 function ProductDetail() {
   const { productId } = useParams();
   console.log("Product ID from URL:", productId);
@@ -26,14 +26,14 @@ function ProductDetail() {
         console.error("API Error:", err);
         setIsLoading(false);
       });
-  }, [productId]);
+  }, []);
 
   if (!product) return <p>Loading...</p>; // Handle loading state
 
   return (
     <LayOut>
       <section className={styles.product_detail}>
-        {isLoading ? (
+        {product && isLoading ? (
           <Loader />
         ) : (
           <ProductCard product={product} flex={true} renderDesc={true} />

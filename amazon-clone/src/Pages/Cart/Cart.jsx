@@ -4,13 +4,23 @@ import LayOut from "../../Components/LayOut/LayOut";
 import { DataContext } from "../../Components/DataProvider/DataProvider";
 import ProductCard from "../../Components/Product/ProductCard";
 import CurrencyFormatter from "../../Components/CurrencyFormatter/CurrencyFormatter";
+import { IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { Type } from "../../Utility/action.type";
+
 function Cart() {
   const [{ basket, user }, dispatch] = useContext(DataContext);
   const total = basket.reduce((amount, item) => {
     return item.price * item.amount + amount;
   }, 0);
-  console.log(basket);
+
+  const increment = (item) => {
+    dispatch({ type: Type.ADD_TO_BASKET, item });
+  };
+  const decrement = (id) => {
+    dispatch({ type: Type.REMOVE_FROM_BASKET, id });
+  };
   return (
     <LayOut>
       <section className={styles.container}>
@@ -23,13 +33,24 @@ function Cart() {
           ) : (
             basket?.map((item, index) => {
               return (
-                <ProductCard
-                  key={index}
-                  product={item}
-                  renderDesc={true}
-                  renderAddCart={false}
-                  flex={true}
-                />
+                <section className={styles.cart_product}>
+                  <ProductCard
+                    key={index}
+                    product={item}
+                    renderDesc={true}
+                    renderAddCart={false}
+                    flex={true}
+                  />
+                  <div className={styles.btn_container}>
+                    <button onClick={() => increment(item)}>
+                      <IoIosArrowUp size={20} />
+                    </button>
+                    <span>{item.amount}</span>
+                    <button onClick={() => decrement(item.id)}>
+                      <IoIosArrowDown size={20} />
+                    </button>
+                  </div>
+                </section>
               );
             })
           )}

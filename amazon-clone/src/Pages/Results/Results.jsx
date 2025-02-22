@@ -35,7 +35,11 @@ function Results() {
         ) : (
           <div className={styles.products_container}>
             {results?.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard
+                key={product.id}
+                product={product}
+                renderAddCart={true}
+              />
             ))}
           </div>
         )}

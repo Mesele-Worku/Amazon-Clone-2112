@@ -18,6 +18,27 @@
 .cart_container hr {
   margin: 10px;
 }
+.cart_product {
+  display: flex;
+  gap: 10px;
+}
+.btn_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.btn_container button {
+  padding: 5px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #fff;
+  border: none;
+}
+.btn_container button:hover>svg{
+    background-color: var(--primary-shade);
+}
 .subtotal {
   padding: 20px;
   min-width: 300px;

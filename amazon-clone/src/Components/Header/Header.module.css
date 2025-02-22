@@ -112,6 +112,11 @@
   border-radius: 3px;
   cursor: pointer;
 }
+.fixed {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 .lower_container {
   background-color: #232f3e;
   color: white;
@@ -128,7 +133,7 @@
 }
 .lower_container ul li:first-child {
   display: flex;
-  gap: 2px;
+  gap: 3px;
   align-items: center;
 }
 

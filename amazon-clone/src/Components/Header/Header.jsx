@@ -10,7 +10,7 @@ function Header() {
   const [state, dispatch] = useContext(DataContext);
   const { basket } = state;
   return (
-    <>
+    <section className={styles.fixed}>
       <section>
         <div className={styles.header_container}>
           <div className={styles.logo_container}>
@@ -61,7 +61,7 @@ function Header() {
         </div>
       </section>
       <LowerHeader />
-    </>
+    </section>
   );
 }
 

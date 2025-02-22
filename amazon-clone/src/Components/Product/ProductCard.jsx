@@ -5,7 +5,7 @@ import styles from "./Product.module.css";
 import { Link } from "react-router-dom";
 import { DataContext } from "../DataProvider/DataProvider";
 import { Type } from "../../Utility/action.type";
-function ProductCard({ product, flex, renderDesc }) {
+function ProductCard({ product, flex, renderDesc, renderAddCart }) {
   const { title, image, id, rating, price, description } = product;
 
   const [state, dispatch] = useContext(DataContext);
@@ -44,9 +44,11 @@ function ProductCard({ product, flex, renderDesc }) {
         <div>
           <CurrencyFormatter amount={price} />
         </div>
-        <button className={styles.button} onClick={addToCart}>
-          Add to Cart
-        </button>
+        {renderAddCart && (
+          <button className={styles.button} onClick={addToCart}>
+            Add to Cart
+          </button>
+        )}
       </div>
     </div>
   );

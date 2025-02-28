@@ -5,12 +5,12 @@ import "firebase/compat/firestore";
 import "firebase/compat/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDcILGtbfARyWvQb5U5I0bcdTZyaxNs0MQ",
-  authDomain: "clone-c09d0.firebaseapp.com",
-  projectId: "clone-c09d0",
-  storageBucket: "clone-c09d0.firebasestorage.app",
-  messagingSenderId: "1008231307692",
-  appId: "1:1008231307692:web:31c8f5e9e322ab33b58209",
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
 };
 
 const app = firebase.initializeApp(firebaseConfig);
